@@ -9,6 +9,5 @@ int main()
 {	
     float a = 5.0;
     float* p = &a;
-
     printf("%f\n", cube(p));
 }
