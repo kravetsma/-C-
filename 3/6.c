@@ -15,6 +15,8 @@ void print_binary(int a)
             printf("1");
         }
     }
+    else
+        printf("0");
 }
     
 
