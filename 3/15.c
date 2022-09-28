@@ -22,7 +22,7 @@ int main()
             scanf("%f", &b[i][j]);   
         }
     }
-    float c[100][100];
+    float c[100][100]= {{0}};
     multiply(a, b, c, x);
 }
 void multiply(float a[100][100], float b[100][100], float c[100][100], int x)
