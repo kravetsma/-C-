@@ -23,9 +23,7 @@ void sort(int array[], int a)
         }
     }
     reverse(array, a);
-    for (int i= 0; i<a; i++)
     
-        printf("%i ",array[i]);
 }
     
 int main()
