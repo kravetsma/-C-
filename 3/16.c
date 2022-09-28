@@ -1,7 +1,8 @@
 #include <stdio.h>
 #define MAX 100
-void multiply(float a[100][100], float b[100][100], float c[100][100], int x);
-void assign(float A[MAX][MAX], float B[MAX][MAX], int n)
+void power(int a[100][100], int c[100][100], int n, int k);
+void multiply(int a[100][100], int b[100][100], int c[100][100], int x);
+void assign(int A[MAX][MAX], int B[MAX][MAX], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -13,38 +14,42 @@ void assign(float A[MAX][MAX], float B[MAX][MAX], int n)
 }
 int main()
 {
-    float a[100][100];
-    float b[100][100];
-    int x;
-    scanf("%i", &x);
-    for (int i = 0; i < x; ++i) 
+    int a[100][100];
+    int n;
+    scanf("%i", &n);
+    for (int i = 0; i < n; ++i) 
     {
-        for (int j = 0; j < x; ++j) 
+        for (int j = 0; j < n; ++j) 
         {
-            scanf("%f", &a[i][j]);   
+            scanf("%i", &a[i][j]);   
         }
     }
-    float c[100][100];
+    int c[100][100];
     int k;
     scanf("%i", &k);
-    assign(a, b, x);
-    assign(a, c, x);
+    power(a, c, n, k);
+}
+
+void power(int a[100][100], int c[100][100], int n, int k)
+{
+    int b[100][100];
+    assign(a, b, n);
+    assign(a, c, n);
     for (int i =1; i<k; i++)
     {
-        multiply(a, b, c, x);
-        assign(c, b, x);
+        multiply(a, b, c, n);
+        assign(c, b, n);
     }
-    for (int i = 0; i < x; i++){
-		for (int j = 0; j < x; j++)
-			printf("%f ", c[i][j]);
+    for (int i = 0; i < n; i++){
+		for (int j = 0; j < n; j++)
+			printf("%i ", c[i][j]);
         printf("\n");
     }
-
-
 }
-void multiply(float a[100][100], float b[100][100], float c[100][100], int x)
+
+void multiply(int a[100][100], int b[100][100], int c[100][100], int x)
 {
-    float u[100][100]={0};
+    int u[100][100]={0};
 
     for (int i = 0; i < x; ++i) 
     {
