@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int trib(int a)
+int trib(int a, int r[])
 {
     if (a==0)
         return 0;
@@ -10,7 +10,9 @@ int trib(int a)
         return 1;
     else
     {
-        return (trib(a-3)+trib(a-2)+trib(a-1));
+        if (r[a] == 0)
+            r[a]=(trib(a-3, r)+trib(a-2, r)+trib(a-1, r));
+        return r[a];
     }
 }
     
@@ -19,6 +21,7 @@ int main()
 {
     int a;
     scanf("%i",&a);
-    printf("%i", trib(a));
+    int r[50] ={0, 0, 1};
+    printf("%i", trib(a, r));
 
 }
