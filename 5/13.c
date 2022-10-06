@@ -28,9 +28,9 @@ void num(char* a, int k, int i)
     if (isalpha(a[i]))
     {
         if (isupper(a[i]))
-            a[i]=((a[i]-'A'+k)%26 +'A');
+            a[i]=(fmod((a[i]-'A'+k),26) +'A');
         else
-            a[i]=((a[i]-'a'+k)%26 +'a');
+            a[i]=(fmod((a[i]-'a'+k),26) +'a');
     }
 }
 void read_file_to_string(const char* filename, char* str)
@@ -69,6 +69,7 @@ int main(int argc, char** argv)
     encrypt (str, temp);
     save_string_to_file("result.txt", str);
 }
+
 
 
 
