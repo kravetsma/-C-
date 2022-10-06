@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include <math.h>
 #define BUFFER_SIZE 1000000
 size_t length(char* str);
 void num(char* a, int k, int i);
@@ -28,15 +27,15 @@ void num(char* a, int k, int i)
     if (isalpha(a[i]))
     {
         if (isupper(a[i]))
-            a[i]=(fmod((a[i]-'A'+k),26) +'A');
+            a[i]=((a[i]-'A'+k)%26 +'A');
         else
-            a[i]=(fmod((a[i]-'a'+k),26) +'a');
+            a[i]=((a[i]-'a'+k)%26 +'a');
     }
 }
 void read_file_to_string(const char* filename, char* str)
 {
     FILE* f = fopen(filename, "r");
-    
+
     int i = 0;
     while (1)
     {
@@ -69,6 +68,7 @@ int main(int argc, char** argv)
     encrypt (str, temp);
     save_string_to_file("result.txt", str);
 }
+
 
 
 
