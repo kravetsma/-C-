@@ -19,7 +19,7 @@ void delete_chars(char* str, char c, int u)
 {
     int k=1;
     int i = 0;
-    while (!(str[i]==(int)c))
+    while (!(str[i]==c))
         i++;
     if (str[i]==c){
             i=deletechar(str, i, u, k, c);
