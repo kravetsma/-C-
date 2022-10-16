@@ -3,12 +3,12 @@
 
 struct point
 {
-    double x, y;
+   	double x, y;
 };
 typedef struct point Point;
 struct triangle
 {
-    Point a, b, c;
+    	Point a, b, c;
 };
 typedef struct triangle Triangle;
 
@@ -49,9 +49,9 @@ Triangle moved_triangle(const Triangle* t, Point d)
 {
 	Triangle t1;
 	t1.a.x = t->a.x + d.x;
-    t1.a.y = t->a.y + d.y;
+    	t1.a.y = t->a.y + d.y;
 	t1.b.x = t->b.x + d.x;
-    t1.b.y = t->b.y + d.y;
+    	t1.b.y = t->b.y + d.y;
 	t1.c.x = t->c.x + d.x;
 	t1.c.y = t->c.y + d.y;
 	return t1;
